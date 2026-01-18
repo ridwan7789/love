@@ -1,95 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Pacifico&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Warm Wedding Theme */
+    --background: 39 50% 96%;
+    --foreground: 25 40% 20%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 39 45% 94%;
+    --card-foreground: 25 40% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 39 50% 96%;
+    --popover-foreground: 25 40% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Golden primary */
+    --primary: 38 75% 55%;
+    --primary-foreground: 25 40% 15%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Cream secondary */
+    --secondary: 39 35% 90%;
+    --secondary-foreground: 25 40% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Soft muted tones */
+    --muted: 35 30% 88%;
+    --muted-foreground: 25 25% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Blush pink accent */
+    --accent: 350 65% 70%;
+    --accent-foreground: 350 60% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Warm brown borders */
+    --border: 30 25% 80%;
+    --input: 30 25% 80%;
+    --ring: 38 75% 55%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Custom colors */
+    --gold: 38 75% 55%;
+    --gold-light: 42 80% 70%;
+    --gold-dark: 35 70% 40%;
+    --cream: 39 50% 96%;
+    --cream-dark: 39 35% 90%;
+    --brown: 25 40% 25%;
+    --brown-light: 25 30% 40%;
+    --blush: 350 65% 75%;
+    --blush-light: 350 70% 90%;
+    --forest: 120 20% 35%;
+    --forest-light: 120 15% 85%;
+    --sunset: 25 80% 65%;
+    --wood: 25 45% 35%;
+    --wood-light: 30 35% 75%;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -99,7 +74,164 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  html {
+    scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Quicksand', sans-serif;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Pacifico', cursive;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent;
+  }
+
+  .wooden-panel {
+    @apply bg-gradient-to-b from-wood-light to-wood rounded-2xl shadow-lg border-4 border-wood;
+    box-shadow: 
+      inset 0 2px 4px rgba(255, 255, 255, 0.3),
+      0 8px 24px rgba(93, 64, 55, 0.3);
+  }
+
+  .card-warm {
+    @apply bg-card rounded-2xl shadow-xl border border-border/50;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--cream)) 0%,
+      hsl(var(--cream-dark)) 100%
+    );
+  }
+
+  .btn-love {
+    @apply px-8 py-4 rounded-full font-bold text-lg transition-all duration-300;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gold)) 0%,
+      hsl(var(--gold-light)) 50%,
+      hsl(var(--gold)) 100%
+    );
+    color: hsl(var(--brown));
+    box-shadow: 
+      0 4px 15px rgba(212, 175, 55, 0.4),
+      inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  }
+
+  .btn-love:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 8px 25px rgba(212, 175, 55, 0.5),
+      inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  }
+
+  .btn-community {
+    @apply px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 border-2;
+    background: hsl(var(--cream));
+    border-color: hsl(var(--gold));
+    color: hsl(var(--brown));
+  }
+
+  .btn-community:hover {
+    background: hsl(var(--gold-light) / 0.2);
+    transform: translateY(-2px);
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-brown mb-6;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-brown-light leading-relaxed;
+  }
+}
+
+@layer utilities {
+  /* Floating hearts animation */
+  @keyframes float-heart {
+    0%, 100% {
+      transform: translateY(0) rotate(-5deg);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes coin-float {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-10px) rotate(5deg);
+    }
+    75% {
+      transform: translateY(-5px) rotate(-5deg);
+    }
+  }
+
+  @keyframes sparkle {
+    0%, 100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-float-heart {
+    animation: float-heart 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+
+  .animate-coin-float {
+    animation: coin-float 4s ease-in-out infinite;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
 }
