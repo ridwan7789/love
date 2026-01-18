@@ -1,4 +1,5 @@
 import { Heart, MessageCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 import heroImage from '@/assets/hero.jpg';
 import FloatingHearts from './FloatingHearts';
 
@@ -13,7 +14,12 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="flex flex-col items-center text-center">
           {/* Hero Image */}
-          <div className="relative mb-8 animate-fade-in-up">
+          <motion.div 
+            className="relative mb-8"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          >
             <img
               src={heroImage}
               alt="Crypto Wedding Fund - Couple with coins"
@@ -23,20 +29,35 @@ const HeroSection = () => {
             <div className="absolute top-10 left-10 w-3 h-3 bg-gold rounded-full animate-sparkle" />
             <div className="absolute top-20 right-16 w-2 h-2 bg-gold-light rounded-full animate-sparkle delay-300" />
             <div className="absolute bottom-20 left-20 w-2 h-2 bg-blush rounded-full animate-sparkle delay-500" />
-          </div>
+          </motion.div>
 
           {/* Headline */}
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-brown mb-4 animate-fade-in-up delay-100">
+          <motion.h1 
+            className="font-display text-4xl md:text-5xl lg:text-6xl text-brown mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Funding Love. Building Forever.
-          </h1>
+          </motion.h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-brown-light max-w-2xl mb-10 leading-relaxed animate-fade-in-up delay-200">
+          <motion.p 
+            className="text-lg md:text-xl text-brown-light max-w-2xl mb-10 leading-relaxed"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             A community-powered crypto project designed to help real love stories reach their wedding day — transparently, honestly, and together.
-          </p>
+          </motion.p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-300">
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
             <button className="btn-love flex items-center justify-center gap-2">
               <Heart className="w-5 h-5" />
               Support Love
@@ -45,7 +66,7 @@ const HeroSection = () => {
               <MessageCircle className="w-5 h-5" />
               Join the Community
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
 
