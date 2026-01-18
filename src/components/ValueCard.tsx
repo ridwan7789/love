@@ -1,22 +1,26 @@
+import { motion } from 'framer-motion';
+
 interface ValueCardProps {
   title: string;
   description: string;
   image: string;
-  delay?: string;
 }
 
-const ValueCard = ({ title, description, image, delay = '0s' }: ValueCardProps) => {
+const ValueCard = ({ title, description, image }: ValueCardProps) => {
   return (
-    <div 
-      className="card-warm p-6 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group"
-      style={{ animationDelay: delay }}
+    <motion.div 
+      className="card-warm p-6 transition-shadow duration-500 group"
+      whileHover={{ y: -8, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)' }}
+      transition={{ duration: 0.3 }}
     >
       {/* Image */}
       <div className="relative overflow-hidden rounded-xl mb-6">
-        <img
+        <motion.img
           src={image}
           alt={title}
-          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-48 object-cover"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.5 }}
         />
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-brown/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -31,7 +35,7 @@ const ValueCard = ({ title, description, image, delay = '0s' }: ValueCardProps) 
       <p className="text-brown-light leading-relaxed">
         {description}
       </p>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion';
 import ValueCard from './ValueCard';
+import ScrollReveal from './ScrollReveal';
 import loveDrivenImage from '@/assets/love-driven.jpg';
 import transparencyImage from '@/assets/transparency.jpg';
 import communityImage from '@/assets/community.jpg';
@@ -32,25 +34,35 @@ const ValuesSection = () => {
     <section className="py-20 bg-gradient-to-b from-cream-dark to-cream relative">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <ScrollReveal className="text-center mb-16">
           <h2 className="section-title">
             Our Core Values
           </h2>
           <p className="section-subtitle max-w-2xl mx-auto">
             What makes Crypto Wedding Fund different from everything else
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Values Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, index) => (
-            <ValueCard
+            <motion.div
               key={value.title}
-              title={value.title}
-              description={value.description}
-              image={value.image}
-              delay={`${index * 0.1}s`}
-            />
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.15,
+                ease: [0.25, 0.1, 0.25, 1]
+              }}
+            >
+              <ValueCard
+                title={value.title}
+                description={value.description}
+                image={value.image}
+              />
+            </motion.div>
           ))}
         </div>
       </div>
