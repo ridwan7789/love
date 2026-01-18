@@ -1,17 +1,44 @@
 import { Heart, MessageCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import heroImage from '@/assets/hero.jpg';
 import FloatingHearts from './FloatingHearts';
 
 const HeroSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start']
+  });
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+  const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.3]);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-cream to-cream-dark">
+    <section 
+      ref={sectionRef}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-cream to-cream-dark"
+    >
       <FloatingHearts />
+      
+      {/* Parallax background gradient blobs */}
+      <motion.div 
+        className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blush/20 rounded-full blur-3xl"
+        style={{ y: backgroundY }}
+      />
+      <motion.div 
+        className="absolute bottom-20 right-1/4 w-[400px] h-[400px] bg-gold/15 rounded-full blur-3xl"
+        style={{ y: useTransform(scrollYProgress, [0, 1], ['0%', '40%']) }}
+      />
       
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cream/30 to-cream pointer-events-none" />
       
-      <div className="container mx-auto px-4 py-12 relative z-10">
+      <motion.div 
+        className="container mx-auto px-4 py-12 relative z-10"
+        style={{ y: contentY, opacity }}
+      >
         <div className="flex flex-col items-center text-center">
           {/* Hero Image */}
           <motion.div 
@@ -25,10 +52,19 @@ const HeroSection = () => {
               alt="Crypto Wedding Fund - Couple with coins"
               className="w-full max-w-3xl rounded-3xl shadow-2xl"
             />
-            {/* Sparkle effects */}
-            <div className="absolute top-10 left-10 w-3 h-3 bg-gold rounded-full animate-sparkle" />
-            <div className="absolute top-20 right-16 w-2 h-2 bg-gold-light rounded-full animate-sparkle delay-300" />
-            <div className="absolute bottom-20 left-20 w-2 h-2 bg-blush rounded-full animate-sparkle delay-500" />
+            {/* Sparkle effects with parallax */}
+            <motion.div 
+              className="absolute top-10 left-10 w-3 h-3 bg-gold rounded-full animate-sparkle"
+              style={{ y: useTransform(scrollYProgress, [0, 1], [0, -30]) }}
+            />
+            <motion.div 
+              className="absolute top-20 right-16 w-2 h-2 bg-gold-light rounded-full animate-sparkle"
+              style={{ y: useTransform(scrollYProgress, [0, 1], [0, -50]) }}
+            />
+            <motion.div 
+              className="absolute bottom-20 left-20 w-2 h-2 bg-blush rounded-full animate-sparkle"
+              style={{ y: useTransform(scrollYProgress, [0, 1], [0, -20]) }}
+            />
           </motion.div>
 
           {/* Headline */}
@@ -68,7 +104,7 @@ const HeroSection = () => {
             </button>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Bottom wave decoration */}
       <div className="absolute bottom-0 left-0 right-0">
