@@ -2,67 +2,107 @@ import { Heart, Twitter, MessageCircle, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
 import logoImage from '@/assets/logo.png';
 import ScrollReveal from './ScrollReveal';
+import MagneticElement from './MagneticElement';
+import SparkleEffect from './SparkleEffect';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-cream-dark to-wood-light py-16 relative">
-      <div className="container mx-auto px-4">
+    <footer className="bg-gradient-to-b from-cream-dark to-wood-light py-16 relative overflow-hidden">
+      <SparkleEffect count={8} />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center text-center">
-          {/* Mini Logo */}
+          {/* Mini Logo with hover effect */}
           <ScrollReveal>
-            <img
-              src={logoImage}
-              alt="Crypto Wedding Fund"
-              className="w-32 mb-6 drop-shadow-lg"
-            />
+            <MagneticElement strength={0.15}>
+              <motion.img
+                src={logoImage}
+                alt="Crypto Wedding Fund"
+                className="w-32 mb-6 drop-shadow-lg cursor-pointer"
+                whileHover={{ scale: 1.1, rotate: [-2, 2, -2, 0] }}
+                transition={{ duration: 0.5 }}
+              />
+            </MagneticElement>
           </ScrollReveal>
 
-          {/* Tagline */}
+          {/* Tagline with gradient animation */}
           <ScrollReveal delay={0.1}>
-            <p className="font-display text-2xl md:text-3xl text-brown mb-8">
+            <motion.p 
+              className="font-display text-2xl md:text-3xl text-brown mb-8"
+              animate={{
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+              }}
+              transition={{ duration: 5, repeat: Infinity }}
+              style={{
+                background: 'linear-gradient(90deg, #5d4e37, #d4af37, #5d4e37)',
+                backgroundSize: '200% 100%',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
               From Love to Forever
-            </p>
+            </motion.p>
           </ScrollReveal>
 
-          {/* Divider */}
+          {/* Animated Divider */}
           <ScrollReveal delay={0.2}>
             <div className="flex items-center gap-3 mb-8">
-              <span className="w-16 h-0.5 bg-gold/50 rounded-full" />
-              <Heart className="w-5 h-5 text-blush fill-blush" />
-              <span className="w-16 h-0.5 bg-gold/50 rounded-full" />
+              <motion.span 
+                className="w-16 h-0.5 bg-gold/50 rounded-full"
+                animate={{ scaleX: [1, 1.5, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+              <motion.div
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 10, -10, 0]
+                }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <Heart className="w-5 h-5 text-blush fill-blush" />
+              </motion.div>
+              <motion.span 
+                className="w-16 h-0.5 bg-gold/50 rounded-full"
+                animate={{ scaleX: [1, 1.5, 1] }}
+                transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+              />
             </div>
           </ScrollReveal>
 
-          {/* Social Links */}
+          {/* Social Links with enhanced effects */}
           <ScrollReveal delay={0.3}>
             <div className="flex items-center gap-6 mb-10">
-              <motion.a
-                href="#"
-                className="w-12 h-12 rounded-full bg-card flex items-center justify-center shadow-md hover:shadow-lg transition-shadow group"
-                aria-label="Twitter"
-                whileHover={{ y: -4 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Twitter className="w-5 h-5 text-brown group-hover:text-gold transition-colors" />
-              </motion.a>
-              <motion.a
-                href="#"
-                className="w-12 h-12 rounded-full bg-card flex items-center justify-center shadow-md hover:shadow-lg transition-shadow group"
-                aria-label="Telegram"
-                whileHover={{ y: -4 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Send className="w-5 h-5 text-brown group-hover:text-gold transition-colors" />
-              </motion.a>
-              <motion.a
-                href="#"
-                className="w-12 h-12 rounded-full bg-card flex items-center justify-center shadow-md hover:shadow-lg transition-shadow group"
-                aria-label="Discord"
-                whileHover={{ y: -4 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <MessageCircle className="w-5 h-5 text-brown group-hover:text-gold transition-colors" />
-              </motion.a>
+              {[
+                { icon: Twitter, label: 'Twitter' },
+                { icon: Send, label: 'Telegram' },
+                { icon: MessageCircle, label: 'Discord' },
+              ].map((social, index) => (
+                <MagneticElement key={social.label} strength={0.3}>
+                  <motion.a
+                    href="#"
+                    className="w-12 h-12 rounded-full bg-card flex items-center justify-center shadow-md group relative overflow-hidden"
+                    aria-label={social.label}
+                    whileHover={{ 
+                      y: -4, 
+                      boxShadow: '0 10px 30px -10px rgba(212, 175, 55, 0.5)' 
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {/* Shimmer effect */}
+                    <motion.div
+                      className="absolute inset-0"
+                      initial={{ x: '-100%' }}
+                      whileHover={{ x: '100%' }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <div className="h-full w-full bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+                    </motion.div>
+                    
+                    <social.icon className="w-5 h-5 text-brown group-hover:text-gold transition-colors relative z-10" />
+                  </motion.a>
+                </MagneticElement>
+              ))}
             </div>
           </ScrollReveal>
 
@@ -82,13 +122,37 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Decorative hearts */}
-      <div className="absolute bottom-10 left-10 text-blush/30">
+      {/* Decorative animated hearts */}
+      <motion.div 
+        className="absolute bottom-10 left-10 text-blush/30"
+        animate={{ 
+          y: [0, -10, 0],
+          rotate: [0, 10, 0]
+        }}
+        transition={{ duration: 3, repeat: Infinity }}
+      >
         <Heart className="w-6 h-6 fill-current" />
-      </div>
-      <div className="absolute top-10 right-10 text-gold/30">
+      </motion.div>
+      <motion.div 
+        className="absolute top-10 right-10 text-gold/30"
+        animate={{ 
+          y: [0, -8, 0],
+          rotate: [0, -10, 0]
+        }}
+        transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+      >
         <Heart className="w-4 h-4 fill-current" />
-      </div>
+      </motion.div>
+      <motion.div 
+        className="absolute bottom-20 right-20 text-gold/20"
+        animate={{ 
+          scale: [1, 1.3, 1],
+          opacity: [0.2, 0.4, 0.2]
+        }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <Heart className="w-5 h-5 fill-current" />
+      </motion.div>
     </footer>
   );
 };
