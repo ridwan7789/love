@@ -2,6 +2,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import realLoveImage from '@/assets/real-love.jpg';
 import ScrollReveal from './ScrollReveal';
+import GlowingImage from './GlowingImage';
+import SparkleEffect from './SparkleEffect';
 
 const StorySection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -15,6 +17,8 @@ const StorySection = () => {
 
   return (
     <section ref={sectionRef} className="py-20 bg-cream relative overflow-hidden">
+      <SparkleEffect count={12} />
+      
       {/* Parallax background blobs */}
       <motion.div 
         className="absolute top-0 right-0 w-96 h-96 bg-blush/10 rounded-full blur-3xl -z-10"
@@ -22,6 +26,10 @@ const StorySection = () => {
           y: useTransform(scrollYProgress, [0, 1], [-80, 80]),
           x: useTransform(scrollYProgress, [0, 1], [0, -40])
         }}
+        animate={{
+          scale: [1, 1.1, 1],
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div 
         className="absolute bottom-0 left-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-10"
@@ -40,13 +48,12 @@ const StorySection = () => {
           {/* Image Side */}
           <ScrollReveal direction="left" className="lg:w-1/2 relative">
             <div className="relative">
-              <motion.img
+              <GlowingImage
                 src={realLoveImage}
                 alt="Built on Real Love Stories"
-                className="w-full max-w-lg mx-auto rounded-3xl shadow-2xl"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.5 }}
+                className="w-full max-w-lg mx-auto"
               />
+              
               {/* Parallax decorative frames */}
               <motion.div 
                 className="absolute -inset-4 border-4 border-gold/30 rounded-3xl -z-10"
@@ -65,9 +72,15 @@ const StorySection = () => {
           {/* Content Side */}
           <div className="lg:w-1/2 text-center lg:text-left">
             <ScrollReveal direction="right">
-              <h2 className="section-title">
+              <motion.h2 
+                className="section-title"
+                whileInView={{
+                  backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                }}
+                transition={{ duration: 5, repeat: Infinity }}
+              >
                 Built on Real Love Stories
-              </h2>
+              </motion.h2>
             </ScrollReveal>
             
             <div className="space-y-6">
@@ -79,7 +92,29 @@ const StorySection = () => {
               
               <ScrollReveal direction="right" delay={0.2}>
                 <p className="section-subtitle">
-                  Crypto Wedding Fund is not about fast profit — it is about <span className="font-bold text-gold-dark">long-term belief</span>, <span className="font-bold text-blush">patience</span>, and <span className="font-bold text-forest">support</span>.
+                  Crypto Wedding Fund is not about fast profit — it is about{' '}
+                  <motion.span 
+                    className="font-bold text-gold-dark inline-block"
+                    whileHover={{ scale: 1.1, rotate: [-2, 2, -2] }}
+                    transition={{ rotate: { duration: 0.3 } }}
+                  >
+                    long-term belief
+                  </motion.span>
+                  ,{' '}
+                  <motion.span 
+                    className="font-bold text-blush inline-block"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    patience
+                  </motion.span>
+                  , and{' '}
+                  <motion.span 
+                    className="font-bold text-forest inline-block"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    support
+                  </motion.span>
+                  .
                 </p>
               </ScrollReveal>
 
@@ -88,14 +123,17 @@ const StorySection = () => {
                   <motion.span 
                     className="inline-block w-12 h-1 bg-gold rounded-full"
                     style={{ scaleX: useTransform(scrollYProgress, [0.3, 0.6], [0.5, 1]) }}
+                    whileHover={{ scaleX: 1.3 }}
                   />
                   <motion.span 
                     className="inline-block w-8 h-1 bg-blush rounded-full"
                     style={{ scaleX: useTransform(scrollYProgress, [0.35, 0.65], [0.5, 1]) }}
+                    whileHover={{ scaleX: 1.3 }}
                   />
                   <motion.span 
                     className="inline-block w-4 h-1 bg-gold-light rounded-full"
                     style={{ scaleX: useTransform(scrollYProgress, [0.4, 0.7], [0.5, 1]) }}
+                    whileHover={{ scaleX: 1.3 }}
                   />
                 </div>
               </ScrollReveal>
@@ -108,10 +146,14 @@ const StorySection = () => {
       <motion.div 
         className="absolute top-20 left-10 w-3 h-3 bg-gold rounded-full opacity-40"
         style={{ y: useTransform(scrollYProgress, [0, 1], [-30, 50]) }}
+        animate={{ scale: [1, 1.5, 1] }}
+        transition={{ duration: 2, repeat: Infinity }}
       />
       <motion.div 
         className="absolute bottom-20 right-20 w-4 h-4 bg-blush rounded-full opacity-30"
         style={{ y: useTransform(scrollYProgress, [0, 1], [20, -40]) }}
+        animate={{ scale: [1, 1.3, 1] }}
+        transition={{ duration: 3, repeat: Infinity }}
       />
     </section>
   );

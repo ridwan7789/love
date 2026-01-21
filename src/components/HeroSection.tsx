@@ -3,6 +3,11 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import heroImage from '@/assets/hero.jpg';
 import FloatingHearts from './FloatingHearts';
+import AnimatedGradient from './AnimatedGradient';
+import ShimmerButton from './ShimmerButton';
+import GlowingImage from './GlowingImage';
+import SparkleEffect from './SparkleEffect';
+import MagneticElement from './MagneticElement';
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -21,6 +26,8 @@ const HeroSection = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-cream to-cream-dark"
     >
       <FloatingHearts />
+      <AnimatedGradient />
+      <SparkleEffect count={15} />
       
       {/* Parallax background gradient blobs */}
       <motion.div 
@@ -40,41 +47,70 @@ const HeroSection = () => {
         style={{ y: contentY, opacity }}
       >
         <div className="flex flex-col items-center text-center">
-          {/* Hero Image */}
+          {/* Hero Image with 3D effect */}
           <motion.div 
             className="relative mb-8"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <img
+            <GlowingImage
               src={heroImage}
               alt="Crypto Wedding Fund - Couple with coins"
-              className="w-full max-w-3xl rounded-3xl shadow-2xl"
+              className="w-full max-w-3xl"
             />
-            {/* Sparkle effects with parallax */}
+            
+            {/* Animated sparkle effects */}
             <motion.div 
-              className="absolute top-10 left-10 w-3 h-3 bg-gold rounded-full animate-sparkle"
-              style={{ y: useTransform(scrollYProgress, [0, 1], [0, -30]) }}
-            />
+              className="absolute top-10 left-10 w-4 h-4"
+              animate={{ 
+                scale: [1, 1.5, 1],
+                opacity: [0.5, 1, 0.5],
+                rotate: [0, 180, 360]
+              }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              <svg viewBox="0 0 24 24" className="w-full h-full fill-gold">
+                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+              </svg>
+            </motion.div>
             <motion.div 
-              className="absolute top-20 right-16 w-2 h-2 bg-gold-light rounded-full animate-sparkle"
-              style={{ y: useTransform(scrollYProgress, [0, 1], [0, -50]) }}
-            />
+              className="absolute top-20 right-16 w-3 h-3"
+              animate={{ 
+                scale: [1, 1.3, 1],
+                opacity: [0.6, 1, 0.6],
+                rotate: [0, -180, -360]
+              }}
+              transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+            >
+              <svg viewBox="0 0 24 24" className="w-full h-full fill-gold-light">
+                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+              </svg>
+            </motion.div>
             <motion.div 
-              className="absolute bottom-20 left-20 w-2 h-2 bg-blush rounded-full animate-sparkle"
-              style={{ y: useTransform(scrollYProgress, [0, 1], [0, -20]) }}
-            />
+              className="absolute bottom-20 left-20 w-3 h-3"
+              animate={{ 
+                scale: [1, 1.4, 1],
+                opacity: [0.4, 1, 0.4]
+              }}
+              transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+            >
+              <svg viewBox="0 0 24 24" className="w-full h-full fill-blush">
+                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+              </svg>
+            </motion.div>
           </motion.div>
 
-          {/* Headline */}
+          {/* Headline with gradient text */}
           <motion.h1 
             className="font-display text-4xl md:text-5xl lg:text-6xl text-brown mb-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Funding Love. Building Forever.
+            <span className="bg-gradient-to-r from-brown via-gold-dark to-brown bg-clip-text text-transparent">
+              Funding Love. Building Forever.
+            </span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -87,21 +123,25 @@ const HeroSection = () => {
             A community-powered crypto project designed to help real love stories reach their wedding day — transparently, honestly, and together.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons with magnetic effect */}
           <motion.div 
             className="flex flex-col sm:flex-row gap-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <button className="btn-love flex items-center justify-center gap-2">
-              <Heart className="w-5 h-5" />
-              Support Love
-            </button>
-            <button className="btn-community flex items-center justify-center gap-2">
-              <MessageCircle className="w-5 h-5" />
-              Join the Community
-            </button>
+            <MagneticElement strength={0.2}>
+              <ShimmerButton variant="love">
+                <Heart className="w-5 h-5" />
+                Support Love
+              </ShimmerButton>
+            </MagneticElement>
+            <MagneticElement strength={0.2}>
+              <ShimmerButton variant="community">
+                <MessageCircle className="w-5 h-5" />
+                Join the Community
+              </ShimmerButton>
+            </MagneticElement>
           </motion.div>
         </div>
       </motion.div>

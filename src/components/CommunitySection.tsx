@@ -4,6 +4,11 @@ import { useRef } from 'react';
 import commitmentImage from '@/assets/commitment.jpg';
 import FloatingHearts from './FloatingHearts';
 import ScrollReveal from './ScrollReveal';
+import GlowingImage from './GlowingImage';
+import ShimmerButton from './ShimmerButton';
+import MagneticElement from './MagneticElement';
+import SparkleEffect from './SparkleEffect';
+import AnimatedGradient from './AnimatedGradient';
 
 const CommunitySection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -17,6 +22,8 @@ const CommunitySection = () => {
   return (
     <section ref={sectionRef} className="py-20 bg-gradient-to-b from-cream to-cream-dark relative overflow-hidden">
       <FloatingHearts />
+      <AnimatedGradient />
+      <SparkleEffect count={18} />
       
       {/* Parallax background blobs */}
       <motion.div 
@@ -48,13 +55,12 @@ const CommunitySection = () => {
           {/* Image */}
           <ScrollReveal delay={0.2}>
             <div className="relative inline-block mb-12">
-              <motion.img
+              <GlowingImage
                 src={commitmentImage}
                 alt="Where Crypto Supports Commitment"
-                className="w-full max-w-2xl rounded-3xl shadow-2xl"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.5 }}
+                className="w-full max-w-2xl"
               />
+              
               {/* Animated glow effect with parallax */}
               <motion.div 
                 className="absolute -inset-2 bg-gradient-to-r from-gold/20 via-blush/20 to-gold/20 rounded-3xl blur-xl -z-10"
@@ -72,42 +78,52 @@ const CommunitySection = () => {
 
           {/* CTA */}
           <ScrollReveal delay={0.3}>
-            <motion.button 
-              className="btn-love flex items-center justify-center gap-2 mx-auto text-xl px-10 py-5"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Heart className="w-6 h-6" />
-              Become Part of the Story
-            </motion.button>
+            <MagneticElement strength={0.15}>
+              <ShimmerButton variant="love" className="text-xl px-10 py-5">
+                <Heart className="w-6 h-6" />
+                Become Part of the Story
+              </ShimmerButton>
+            </MagneticElement>
           </ScrollReveal>
         </div>
       </div>
 
-      {/* Parallax stars decoration */}
+      {/* Parallax stars decoration with pulse animation */}
       <motion.div 
         className="absolute top-10 left-[10%] w-1 h-1 bg-gold rounded-full"
         style={{ y: useTransform(scrollYProgress, [0, 1], [-20, 40]) }}
+        animate={{ scale: [1, 2, 1], opacity: [0.5, 1, 0.5] }}
+        transition={{ duration: 2, repeat: Infinity }}
       />
       <motion.div 
         className="absolute top-20 left-[30%] w-1.5 h-1.5 bg-gold-light rounded-full"
         style={{ y: useTransform(scrollYProgress, [0, 1], [10, -30]) }}
+        animate={{ scale: [1, 1.5, 1], opacity: [0.6, 1, 0.6] }}
+        transition={{ duration: 2.5, repeat: Infinity, delay: 0.3 }}
       />
       <motion.div 
         className="absolute top-[15%] right-[20%] w-1 h-1 bg-gold rounded-full"
         style={{ y: useTransform(scrollYProgress, [0, 1], [-30, 50]) }}
+        animate={{ scale: [1, 2, 1], opacity: [0.4, 1, 0.4] }}
+        transition={{ duration: 3, repeat: Infinity, delay: 0.6 }}
       />
       <motion.div 
         className="absolute top-[25%] right-[35%] w-2 h-2 bg-gold-light rounded-full"
         style={{ y: useTransform(scrollYProgress, [0, 1], [20, -20]) }}
+        animate={{ scale: [1, 1.3, 1], opacity: [0.5, 1, 0.5] }}
+        transition={{ duration: 2, repeat: Infinity, delay: 0.9 }}
       />
       <motion.div 
         className="absolute bottom-[20%] left-[15%] w-1.5 h-1.5 bg-blush rounded-full opacity-60"
         style={{ y: useTransform(scrollYProgress, [0, 1], [-15, 35]) }}
+        animate={{ scale: [1, 1.8, 1] }}
+        transition={{ duration: 2.5, repeat: Infinity }}
       />
       <motion.div 
         className="absolute bottom-[30%] right-[10%] w-2 h-2 bg-gold rounded-full opacity-50"
         style={{ y: useTransform(scrollYProgress, [0, 1], [25, -25]) }}
+        animate={{ scale: [1, 1.5, 1] }}
+        transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
       />
     </section>
   );
