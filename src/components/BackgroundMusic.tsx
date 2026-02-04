@@ -1,11 +1,38 @@
 import { useState, useRef, useEffect } from 'react';
-import { Volume2, VolumeX, Music } from 'lucide-react';
+import { Volume2, VolumeX } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const BackgroundMusic = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [showPrompt, setShowPrompt] = useState(true);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const startMusicOnInteraction = () => {
+      if (!hasInteracted && audioRef.current) {
+        audioRef.current.play().then(() => {
+          setIsPlaying(true);
+          setHasInteracted(true);
+        }).catch(() => {
+          // Autoplay was prevented, user needs to click the button
+          setHasInteracted(true);
+        });
+      }
+    };
+
+    // Listen for any user interaction
+    const events = ['click', 'scroll', 'touchstart', 'keydown', 'mousemove'];
+    
+    events.forEach(event => {
+      window.addEventListener(event, startMusicOnInteraction, { once: true });
+    });
+
+    return () => {
+      events.forEach(event => {
+        window.removeEventListener(event, startMusicOnInteraction);
+      });
+    };
+  }, [hasInteracted]);
 
   const toggleMusic = () => {
     if (audioRef.current) {
@@ -15,20 +42,7 @@ const BackgroundMusic = () => {
         audioRef.current.play();
       }
       setIsPlaying(!isPlaying);
-      setShowPrompt(false);
     }
-  };
-
-  const startMusic = () => {
-    if (audioRef.current) {
-      audioRef.current.play();
-      setIsPlaying(true);
-      setShowPrompt(false);
-    }
-  };
-
-  const dismissPrompt = () => {
-    setShowPrompt(false);
   };
 
   return (
@@ -41,52 +55,15 @@ const BackgroundMusic = () => {
         preload="auto"
       />
 
-      {/* Initial prompt to play music */}
-      <AnimatePresence>
-        {showPrompt && (
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
-            className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50"
-          >
-            <div className="bg-card/95 backdrop-blur-md rounded-2xl shadow-xl border border-gold/20 p-4 flex items-center gap-4">
-              <motion.div
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                className="w-10 h-10 rounded-full bg-gradient-to-br from-gold to-gold-dark flex items-center justify-center"
-              >
-                <Music className="w-5 h-5 text-white" />
-              </motion.div>
-              <div className="text-left">
-                <p className="text-brown font-medium text-sm">🎵 Play romantic music?</p>
-                <p className="text-brown-light text-xs">A Thousand Years</p>
-              </div>
-              <div className="flex gap-2">
-                <button
-                  onClick={startMusic}
-                  className="px-4 py-2 bg-gradient-to-r from-gold to-gold-dark text-white rounded-full text-sm font-medium hover:shadow-lg transition-all"
-                >
-                  Play
-                </button>
-                <button
-                  onClick={dismissPrompt}
-                  className="px-3 py-2 text-brown-light hover:text-brown text-sm transition-colors"
-                >
-                  ✕
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       {/* Floating music control button */}
       <motion.button
         onClick={toggleMusic}
         className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-br from-gold to-gold-dark shadow-lg flex items-center justify-center group"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 }}
         aria-label={isPlaying ? 'Mute music' : 'Play music'}
       >
         {/* Animated rings when playing */}
