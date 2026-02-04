@@ -53,10 +53,10 @@ const ValuesSection = () => {
         {/* Section Header */}
         <ScrollReveal className="text-center mb-16">
           <h2 className="section-title">
-            Our Core Values
+            Why February Changes Everything
           </h2>
           <p className="section-subtitle max-w-2xl mx-auto">
-            What makes Crypto Wedding Fund different from everything else
+            Four pillars that make this Valentine's crypto movement truly special
           </p>
         </ScrollReveal>
 

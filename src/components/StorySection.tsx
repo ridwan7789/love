@@ -79,40 +79,40 @@ const StorySection = () => {
                 }}
                 transition={{ duration: 5, repeat: Infinity }}
               >
-                Built on Real Love Stories
+                Valentine's Isn't Just a Day — It's a Promise
               </motion.h2>
             </ScrollReveal>
             
             <div className="space-y-6">
               <ScrollReveal direction="right" delay={0.1}>
                 <p className="section-subtitle">
-                  This project is inspired by real couples who believe that commitment is worth fighting for.
+                  While the world celebrates love for 24 hours, we're building something that lasts a lifetime. Every February 14th reminds us why we started — and why we keep going.
                 </p>
               </ScrollReveal>
               
               <ScrollReveal direction="right" delay={0.2}>
                 <p className="section-subtitle">
-                  Crypto Wedding Fund is not about fast profit — it is about{' '}
+                  This Valentine's, don't just say "I love you" — prove it with{' '}
                   <motion.span 
                     className="font-bold text-gold-dark inline-block"
                     whileHover={{ scale: 1.1, rotate: [-2, 2, -2] }}
                     transition={{ rotate: { duration: 0.3 } }}
                   >
-                    long-term belief
+                    action
                   </motion.span>
                   ,{' '}
                   <motion.span 
                     className="font-bold text-blush inline-block"
                     whileHover={{ scale: 1.1 }}
                   >
-                    patience
+                    transparency
                   </motion.span>
                   , and{' '}
                   <motion.span 
                     className="font-bold text-forest inline-block"
                     whileHover={{ scale: 1.1 }}
                   >
-                    support
+                    purpose
                   </motion.span>
                   .
                 </p>

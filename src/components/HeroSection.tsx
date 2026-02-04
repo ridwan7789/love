@@ -133,13 +133,13 @@ const HeroSection = () => {
             <MagneticElement strength={0.2}>
               <ShimmerButton variant="love">
                 <Heart className="w-5 h-5" />
-                Support Love
+                Be Someone's Valentine
               </ShimmerButton>
             </MagneticElement>
             <MagneticElement strength={0.2}>
               <ShimmerButton variant="community">
                 <MessageCircle className="w-5 h-5" />
-                Join the Community
+                Join the Love Movement
               </ShimmerButton>
             </MagneticElement>
           </motion.div>
