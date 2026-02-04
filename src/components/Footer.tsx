@@ -116,7 +116,7 @@ const Footer = () => {
           {/* Copyright */}
           <ScrollReveal delay={0.5}>
             <p className="text-brown-light/60 text-xs mt-6">
-              © {new Date().getFullYear()} Crypto Wedding Fund. All rights reserved.
+              © {new Date().getFullYear()} $L2G — LOVE 2 GIFT. All rights reserved.
             </p>
           </ScrollReveal>
         </div>

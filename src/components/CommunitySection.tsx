@@ -81,7 +81,7 @@ const CommunitySection = () => {
             <MagneticElement strength={0.15}>
               <ShimmerButton variant="love" className="text-xl px-10 py-5">
                 <Heart className="w-6 h-6" />
-                Be Someone's Valentine Today
+                Get $L2G Now
               </ShimmerButton>
             </MagneticElement>
           </ScrollReveal>
