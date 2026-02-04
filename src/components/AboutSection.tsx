@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import logoImage from '@/assets/logo.png';
+import logoImage from '@/assets/l2g-token-logo.png';
 import ScrollReveal from './ScrollReveal';
 import SparkleEffect from './SparkleEffect';
 import MagneticElement from './MagneticElement';

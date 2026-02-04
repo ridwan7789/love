@@ -1,6 +1,6 @@
 import { Heart, Twitter, MessageCircle, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
-import logoImage from '@/assets/logo.png';
+import logoImage from '@/assets/l2g-token-logo.png';
 import ScrollReveal from './ScrollReveal';
 import MagneticElement from './MagneticElement';
 import SparkleEffect from './SparkleEffect';
