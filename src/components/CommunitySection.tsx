@@ -1,7 +1,7 @@
 import { Heart } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import commitmentImage from '@/assets/commitment.jpg';
+import commitmentImage from '@/assets/commitment.png';
 import FloatingHearts from './FloatingHearts';
 import ScrollReveal from './ScrollReveal';
 import GlowingImage from './GlowingImage';
@@ -24,17 +24,17 @@ const CommunitySection = () => {
       <FloatingHearts />
       <AnimatedGradient />
       <SparkleEffect count={18} />
-      
+
       {/* Parallax background blobs */}
-      <motion.div 
+      <motion.div
         className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blush/10 rounded-full blur-3xl"
         style={{ y: useTransform(scrollYProgress, [0, 1], [-100, 100]) }}
       />
-      <motion.div 
+      <motion.div
         className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-gold/10 rounded-full blur-3xl"
         style={{ y: useTransform(scrollYProgress, [0, 1], [80, -80]) }}
       />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Title */}
@@ -47,7 +47,7 @@ const CommunitySection = () => {
           {/* Content */}
           <ScrollReveal delay={0.1}>
             <p className="section-subtitle mb-12 max-w-2xl mx-auto">
-              Be more than a holder — be a gifter. 
+              Be more than a holder — be a gifter.
               Join thousands of $L2G believers united by one mission: helping real love stories find their happily ever after.
             </p>
           </ScrollReveal>
@@ -60,15 +60,15 @@ const CommunitySection = () => {
                 alt="Valentine's Love Community"
                 className="w-full max-w-2xl"
               />
-              
+
               {/* Animated glow effect with parallax */}
-              <motion.div 
+              <motion.div
                 className="absolute -inset-2 bg-gradient-to-r from-gold/20 via-blush/20 to-gold/20 rounded-3xl blur-xl -z-10"
                 style={{ opacity: glowOpacity }}
               />
-              <motion.div 
+              <motion.div
                 className="absolute -inset-6 bg-gradient-to-r from-blush/10 via-gold/10 to-blush/10 rounded-3xl blur-2xl -z-20"
-                style={{ 
+                style={{
                   y: useTransform(scrollYProgress, [0, 1], [10, -10]),
                   scale: useTransform(scrollYProgress, [0.2, 0.5, 0.8], [0.95, 1.05, 0.95])
                 }}
@@ -89,37 +89,37 @@ const CommunitySection = () => {
       </div>
 
       {/* Parallax stars decoration with pulse animation */}
-      <motion.div 
+      <motion.div
         className="absolute top-10 left-[10%] w-1 h-1 bg-gold rounded-full"
         style={{ y: useTransform(scrollYProgress, [0, 1], [-20, 40]) }}
         animate={{ scale: [1, 2, 1], opacity: [0.5, 1, 0.5] }}
         transition={{ duration: 2, repeat: Infinity }}
       />
-      <motion.div 
+      <motion.div
         className="absolute top-20 left-[30%] w-1.5 h-1.5 bg-gold-light rounded-full"
         style={{ y: useTransform(scrollYProgress, [0, 1], [10, -30]) }}
         animate={{ scale: [1, 1.5, 1], opacity: [0.6, 1, 0.6] }}
         transition={{ duration: 2.5, repeat: Infinity, delay: 0.3 }}
       />
-      <motion.div 
+      <motion.div
         className="absolute top-[15%] right-[20%] w-1 h-1 bg-gold rounded-full"
         style={{ y: useTransform(scrollYProgress, [0, 1], [-30, 50]) }}
         animate={{ scale: [1, 2, 1], opacity: [0.4, 1, 0.4] }}
         transition={{ duration: 3, repeat: Infinity, delay: 0.6 }}
       />
-      <motion.div 
+      <motion.div
         className="absolute top-[25%] right-[35%] w-2 h-2 bg-gold-light rounded-full"
         style={{ y: useTransform(scrollYProgress, [0, 1], [20, -20]) }}
         animate={{ scale: [1, 1.3, 1], opacity: [0.5, 1, 0.5] }}
         transition={{ duration: 2, repeat: Infinity, delay: 0.9 }}
       />
-      <motion.div 
+      <motion.div
         className="absolute bottom-[20%] left-[15%] w-1.5 h-1.5 bg-blush rounded-full opacity-60"
         style={{ y: useTransform(scrollYProgress, [0, 1], [-15, 35]) }}
         animate={{ scale: [1, 1.8, 1] }}
         transition={{ duration: 2.5, repeat: Infinity }}
       />
-      <motion.div 
+      <motion.div
         className="absolute bottom-[30%] right-[10%] w-2 h-2 bg-gold rounded-full opacity-50"
         style={{ y: useTransform(scrollYProgress, [0, 1], [25, -25]) }}
         animate={{ scale: [1, 1.5, 1] }}

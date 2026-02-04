@@ -1,7 +1,7 @@
 import { Heart, MessageCircle } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import heroImage from '@/assets/hero.jpg';
+import heroImage from '@/assets/hero.png';
 import FloatingHearts from './FloatingHearts';
 import AnimatedGradient from './AnimatedGradient';
 import ShimmerButton from './ShimmerButton';
@@ -21,34 +21,34 @@ const HeroSection = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.3]);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-cream to-cream-dark"
     >
       <FloatingHearts />
       <AnimatedGradient />
       <SparkleEffect count={15} />
-      
+
       {/* Parallax background gradient blobs */}
-      <motion.div 
+      <motion.div
         className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blush/20 rounded-full blur-3xl"
         style={{ y: backgroundY }}
       />
-      <motion.div 
+      <motion.div
         className="absolute bottom-20 right-1/4 w-[400px] h-[400px] bg-gold/15 rounded-full blur-3xl"
         style={{ y: useTransform(scrollYProgress, [0, 1], ['0%', '40%']) }}
       />
-      
+
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cream/30 to-cream pointer-events-none" />
-      
-      <motion.div 
+
+      <motion.div
         className="container mx-auto px-4 py-12 relative z-10"
         style={{ y: contentY, opacity }}
       >
         <div className="flex flex-col items-center text-center">
           {/* Hero Image with 3D effect */}
-          <motion.div 
+          <motion.div
             className="relative mb-8"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -59,11 +59,11 @@ const HeroSection = () => {
               alt="Crypto Wedding Fund - Couple with coins"
               className="w-full max-w-3xl"
             />
-            
+
             {/* Animated sparkle effects */}
-            <motion.div 
+            <motion.div
               className="absolute top-10 left-10 w-4 h-4"
-              animate={{ 
+              animate={{
                 scale: [1, 1.5, 1],
                 opacity: [0.5, 1, 0.5],
                 rotate: [0, 180, 360]
@@ -74,9 +74,9 @@ const HeroSection = () => {
                 <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
               </svg>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="absolute top-20 right-16 w-3 h-3"
-              animate={{ 
+              animate={{
                 scale: [1, 1.3, 1],
                 opacity: [0.6, 1, 0.6],
                 rotate: [0, -180, -360]
@@ -87,9 +87,9 @@ const HeroSection = () => {
                 <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
               </svg>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="absolute bottom-20 left-20 w-3 h-3"
-              animate={{ 
+              animate={{
                 scale: [1, 1.4, 1],
                 opacity: [0.4, 1, 0.4]
               }}
@@ -102,7 +102,7 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Headline with gradient text */}
-          <motion.h1 
+          <motion.h1
             className="font-display text-4xl md:text-5xl lg:text-6xl text-brown mb-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -114,7 +114,7 @@ const HeroSection = () => {
           </motion.h1>
 
           {/* Subheadline */}
-          <motion.p 
+          <motion.p
             className="text-lg md:text-xl text-brown-light max-w-2xl mb-10 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -124,7 +124,7 @@ const HeroSection = () => {
           </motion.p>
 
           {/* CTA Buttons with magnetic effect */}
-          <motion.div 
+          <motion.div
             className="flex flex-col sm:flex-row gap-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
