@@ -5,11 +5,13 @@ import ValuesSection from '@/components/ValuesSection';
 import StorySection from '@/components/StorySection';
 import CommunitySection from '@/components/CommunitySection';
 import Footer from '@/components/Footer';
+import BackgroundMusic from '@/components/BackgroundMusic';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-cream overflow-x-hidden">
       <Navbar />
+      <BackgroundMusic />
       
       <main>
         <HeroSection />
