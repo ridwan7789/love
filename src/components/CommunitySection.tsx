@@ -40,15 +40,15 @@ const CommunitySection = () => {
           {/* Title */}
           <ScrollReveal>
             <h2 className="section-title mb-6">
-              Make This Valentine's Unforgettable
+              Join the $L2G Movement
             </h2>
           </ScrollReveal>
 
           {/* Content */}
           <ScrollReveal delay={0.1}>
             <p className="section-subtitle mb-12 max-w-2xl mx-auto">
-              This February, be more than a holder — be a believer. 
-              Join thousands of hearts united by one mission: helping real love stories find their happily ever after.
+              Be more than a holder — be a gifter. 
+              Join thousands of $L2G believers united by one mission: helping real love stories find their happily ever after.
             </p>
           </ScrollReveal>
 
