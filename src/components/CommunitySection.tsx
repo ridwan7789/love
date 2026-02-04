@@ -40,15 +40,15 @@ const CommunitySection = () => {
           {/* Title */}
           <ScrollReveal>
             <h2 className="section-title mb-6">
-              Where Crypto Supports Commitment
+              Make This Valentine's Unforgettable
             </h2>
           </ScrollReveal>
 
           {/* Content */}
           <ScrollReveal delay={0.1}>
             <p className="section-subtitle mb-12 max-w-2xl mx-auto">
-              Holding Crypto Wedding Fund means more than owning a token.
-              It means supporting dreams, promises, and futures.
+              This February, be more than a holder — be a believer. 
+              Join thousands of hearts united by one mission: helping real love stories find their happily ever after.
             </p>
           </ScrollReveal>
 
@@ -57,7 +57,7 @@ const CommunitySection = () => {
             <div className="relative inline-block mb-12">
               <GlowingImage
                 src={commitmentImage}
-                alt="Where Crypto Supports Commitment"
+                alt="Valentine's Love Community"
                 className="w-full max-w-2xl"
               />
               
@@ -81,7 +81,7 @@ const CommunitySection = () => {
             <MagneticElement strength={0.15}>
               <ShimmerButton variant="love" className="text-xl px-10 py-5">
                 <Heart className="w-6 h-6" />
-                Become Part of the Story
+                Be Someone's Valentine Today
               </ShimmerButton>
             </MagneticElement>
           </ScrollReveal>

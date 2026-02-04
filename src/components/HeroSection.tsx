@@ -109,7 +109,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <span className="bg-gradient-to-r from-brown via-gold-dark to-brown bg-clip-text text-transparent">
-              Funding Love. Building Forever.
+              This Valentine's, Let Love Go On-Chain
             </span>
           </motion.h1>
 
@@ -120,7 +120,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            A community-powered crypto project designed to help real love stories reach their wedding day — transparently, honestly, and together.
+            February is the month of love — and this Valentine's, we're proving that crypto can be more than charts and candles. It can be hearts and commitments. Join a movement where every token carries a promise of forever.
           </motion.p>
 
           {/* CTA Buttons with magnetic effect */}
@@ -133,13 +133,13 @@ const HeroSection = () => {
             <MagneticElement strength={0.2}>
               <ShimmerButton variant="love">
                 <Heart className="w-5 h-5" />
-                Support Love
+                Be Someone's Valentine
               </ShimmerButton>
             </MagneticElement>
             <MagneticElement strength={0.2}>
               <ShimmerButton variant="community">
                 <MessageCircle className="w-5 h-5" />
-                Join the Community
+                Join the Love Movement
               </ShimmerButton>
             </MagneticElement>
           </motion.div>

@@ -41,7 +41,7 @@ const Footer = () => {
                 backgroundClip: 'text',
               }}
             >
-              From Love to Forever
+              Every Valentine's. Every Promise. Forever.
             </motion.p>
           </ScrollReveal>
 
@@ -109,7 +109,7 @@ const Footer = () => {
           {/* Footer Text */}
           <ScrollReveal delay={0.4}>
             <p className="text-brown-light text-sm max-w-md leading-relaxed">
-              Crypto Wedding Fund is a community-powered project built on love, honesty, and shared belief.
+              This Valentine's and beyond — Crypto Wedding Fund is where hearts meet the blockchain. Built on love, powered by community, sealed forever.
             </p>
           </ScrollReveal>
 

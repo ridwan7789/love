@@ -41,7 +41,7 @@ const AboutSection = () => {
           {/* Title */}
           <ScrollReveal>
             <h2 className="section-title mb-8">
-              Why Crypto Wedding Fund Exists
+              A Valentine's Gift That Lasts Forever
             </h2>
           </ScrollReveal>
 
@@ -53,12 +53,12 @@ const AboutSection = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                Crypto Wedding Fund was born from a simple belief:{' '}
+                This February, we're redefining what it means to celebrate love.{' '}
                 <motion.span 
                   className="font-bold text-brown inline-block"
                   whileHover={{ scale: 1.1, color: '#d4af37' }}
                 >
-                  Love should not be delayed by financial barriers.
+                  Forget the chocolates that melt. Forget the roses that fade.
                 </motion.span>
               </motion.p>
             </ScrollReveal>
@@ -69,7 +69,7 @@ const AboutSection = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                In a world driven by technology, we chose to use blockchain not for speculation — but for{' '}
+                Crypto Wedding Fund is a Valentine's revolution — where your support becomes{' '}
                 <motion.span 
                   className="text-gold-dark font-semibold inline-block"
                   animate={{ 
@@ -77,7 +77,7 @@ const AboutSection = () => {
                   }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
-                  purpose
+                  an eternal promise on the blockchain
                 </motion.span>
                 .
               </motion.p>
@@ -89,7 +89,7 @@ const AboutSection = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                Crypto Wedding Fund allows a global community to support real couples, real dreams, and real commitments.
+                Be part of a global love letter — written in code, sealed with commitment, and destined to help couples reach their forever.
               </motion.p>
             </ScrollReveal>
           </div>

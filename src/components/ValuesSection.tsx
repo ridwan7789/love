@@ -9,23 +9,23 @@ import noPromisesImage from '@/assets/no-promises.jpg';
 
 const values = [
   {
-    title: 'Love-Driven Purpose',
-    description: 'Built around real relationships and genuine commitment. This project exists because love matters.',
+    title: "Valentine's Vision",
+    description: 'Born in the month of love, built for couples who believe forever starts with a single promise.',
     image: loveDrivenImage,
   },
   {
-    title: 'On-Chain Transparency',
-    description: 'All funds are visible, verifiable, and community-tracked directly on the blockchain.',
+    title: 'Hearts on Chain',
+    description: 'Every transaction is a love letter — visible, verifiable, and forever etched on the blockchain.',
     image: transparencyImage,
   },
   {
-    title: 'Community Powered',
-    description: 'Every holder becomes part of a shared love story. Together, we help dreams come true.',
+    title: 'A Community of Cupids',
+    description: "Join a movement of believers helping real couples turn their Valentine's dreams into wedding bells.",
     image: communityImage,
   },
   {
-    title: 'No False Promises',
-    description: 'No hype. No fake guarantees. Just honesty, transparency, and shared belief.',
+    title: 'Love Without Illusions',
+    description: 'No empty promises. No hype. Just genuine support for real love stories — honest and true.',
     image: noPromisesImage,
   },
 ];
@@ -53,10 +53,10 @@ const ValuesSection = () => {
         {/* Section Header */}
         <ScrollReveal className="text-center mb-16">
           <h2 className="section-title">
-            Our Core Values
+            Why February Changes Everything
           </h2>
           <p className="section-subtitle max-w-2xl mx-auto">
-            What makes Crypto Wedding Fund different from everything else
+            Four pillars that make this Valentine's crypto movement truly special
           </p>
         </ScrollReveal>
 
