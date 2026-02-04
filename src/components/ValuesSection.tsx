@@ -9,7 +9,7 @@ import noPromisesImage from '@/assets/no-promises.jpg';
 
 const values = [
   {
-    title: 'Valentine's Vision',
+    title: "Valentine's Vision",
     description: 'Born in the month of love, built for couples who believe forever starts with a single promise.',
     image: loveDrivenImage,
   },
@@ -20,7 +20,7 @@ const values = [
   },
   {
     title: 'A Community of Cupids',
-    description: 'Join a movement of believers helping real couples turn their Valentine's dreams into wedding bells.',
+    description: "Join a movement of believers helping real couples turn their Valentine's dreams into wedding bells.",
     image: communityImage,
   },
   {
