@@ -41,7 +41,7 @@ const Footer = () => {
                 backgroundClip: 'text',
               }}
             >
-              Every Valentine's. Every Promise. Forever.
+              $L2G — Love 2 Gift. Forever On-Chain.
             </motion.p>
           </ScrollReveal>
 
