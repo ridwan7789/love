@@ -9,23 +9,23 @@ import noPromisesImage from '@/assets/no-promises.jpg';
 
 const values = [
   {
-    title: "Valentine's Vision",
-    description: 'Born in the month of love, built for couples who believe forever starts with a single promise.',
+    title: "Gift of Forever",
+    description: 'Every $L2G token is a gift that keeps on giving — funding real love stories that last a lifetime.',
     image: loveDrivenImage,
   },
   {
-    title: 'Hearts on Chain',
-    description: 'Every transaction is a love letter — visible, verifiable, and forever etched on the blockchain.',
+    title: '$L2G on Chain',
+    description: 'Every $L2G transaction is a love letter — visible, verifiable, and forever etched on the blockchain.',
     image: transparencyImage,
   },
   {
-    title: 'A Community of Cupids',
-    description: "Join a movement of believers helping real couples turn their Valentine's dreams into wedding bells.",
+    title: 'Community of Givers',
+    description: "Join a movement of $L2G holders helping real couples turn their wedding dreams into reality.",
     image: communityImage,
   },
   {
-    title: 'Love Without Illusions',
-    description: 'No empty promises. No hype. Just genuine support for real love stories — honest and true.',
+    title: 'Genuine Gifting',
+    description: 'No empty promises. No hype. Just $L2G — genuine support for real love stories, honest and true.',
     image: noPromisesImage,
   },
 ];
@@ -53,10 +53,10 @@ const ValuesSection = () => {
         {/* Section Header */}
         <ScrollReveal className="text-center mb-16">
           <h2 className="section-title">
-            Why February Changes Everything
+            Why $L2G Changes Everything
           </h2>
           <p className="section-subtitle max-w-2xl mx-auto">
-            Four pillars that make this Valentine's crypto movement truly special
+            Four pillars that make LOVE 2 GIFT the most meaningful token in crypto
           </p>
         </ScrollReveal>
 

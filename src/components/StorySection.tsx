@@ -79,40 +79,47 @@ const StorySection = () => {
                 }}
                 transition={{ duration: 5, repeat: Infinity }}
               >
-                Valentine's Isn't Just a Day — It's a Promise
+                $L2G — More Than a Token, It's a Promise
               </motion.h2>
             </ScrollReveal>
             
             <div className="space-y-6">
               <ScrollReveal direction="right" delay={0.1}>
                 <p className="section-subtitle">
-                  While the world celebrates love for 24 hours, we're building something that lasts a lifetime. Every February 14th reminds us why we started — and why we keep going.
+                  While others trade for profit, $L2G holders gift for purpose. Every LOVE 2 GIFT token you share helps write someone's love story.
                 </p>
               </ScrollReveal>
               
               <ScrollReveal direction="right" delay={0.2}>
                 <p className="section-subtitle">
-                  This Valentine's, don't just say "I love you" — prove it with{' '}
+                  With{' '}
                   <motion.span 
                     className="font-bold text-gold-dark inline-block"
                     whileHover={{ scale: 1.1, rotate: [-2, 2, -2] }}
                     transition={{ rotate: { duration: 0.3 } }}
                   >
+                    $L2G
+                  </motion.span>
+                  , you don't just say "I love you" — you prove it with{' '}
+                  <motion.span 
+                    className="font-bold text-blush inline-block"
+                    whileHover={{ scale: 1.1 }}
+                  >
                     action
                   </motion.span>
                   ,{' '}
                   <motion.span 
-                    className="font-bold text-blush inline-block"
+                    className="font-bold text-forest inline-block"
                     whileHover={{ scale: 1.1 }}
                   >
                     transparency
                   </motion.span>
                   , and{' '}
                   <motion.span 
-                    className="font-bold text-forest inline-block"
+                    className="font-bold text-gold inline-block"
                     whileHover={{ scale: 1.1 }}
                   >
-                    purpose
+                    love
                   </motion.span>
                   .
                 </p>

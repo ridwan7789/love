@@ -41,7 +41,7 @@ const AboutSection = () => {
           {/* Title */}
           <ScrollReveal>
             <h2 className="section-title mb-8">
-              A Valentine's Gift That Lasts Forever
+              What is $L2G (LOVE 2 GIFT)?
             </h2>
           </ScrollReveal>
 
@@ -53,13 +53,20 @@ const AboutSection = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                This February, we're redefining what it means to celebrate love.{' '}
+                <motion.span 
+                  className="font-bold text-gold-dark inline-block"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  $L2G
+                </motion.span>{' '}
+                isn't just another token — it's a{' '}
                 <motion.span 
                   className="font-bold text-brown inline-block"
                   whileHover={{ scale: 1.1, color: '#d4af37' }}
                 >
-                  Forget the chocolates that melt. Forget the roses that fade.
+                  gift of love that never expires
                 </motion.span>
+                .
               </motion.p>
             </ScrollReveal>
             
@@ -69,7 +76,7 @@ const AboutSection = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                Crypto Wedding Fund is a Valentine's revolution — where your support becomes{' '}
+                Every $L2G token you hold or gift becomes{' '}
                 <motion.span 
                   className="text-gold-dark font-semibold inline-block"
                   animate={{ 
@@ -79,7 +86,7 @@ const AboutSection = () => {
                 >
                   an eternal promise on the blockchain
                 </motion.span>
-                .
+                {' '}— helping real couples fund their wedding dreams.
               </motion.p>
             </ScrollReveal>
             
@@ -89,7 +96,7 @@ const AboutSection = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                Be part of a global love letter — written in code, sealed with commitment, and destined to help couples reach their forever.
+                Be part of a global love letter — written in code, sealed with $L2G, and destined to make "happily ever after" a reality.
               </motion.p>
             </ScrollReveal>
           </div>

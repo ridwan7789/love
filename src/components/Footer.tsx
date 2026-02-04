@@ -41,7 +41,7 @@ const Footer = () => {
                 backgroundClip: 'text',
               }}
             >
-              Every Valentine's. Every Promise. Forever.
+              $L2G — Love 2 Gift. Forever On-Chain.
             </motion.p>
           </ScrollReveal>
 
@@ -109,14 +109,14 @@ const Footer = () => {
           {/* Footer Text */}
           <ScrollReveal delay={0.4}>
             <p className="text-brown-light text-sm max-w-md leading-relaxed">
-              This Valentine's and beyond — Crypto Wedding Fund is where hearts meet the blockchain. Built on love, powered by community, sealed forever.
+              $L2G (LOVE 2 GIFT) — Where hearts meet the blockchain. Every token is a gift of love, powered by community, sealed forever on-chain.
             </p>
           </ScrollReveal>
 
           {/* Copyright */}
           <ScrollReveal delay={0.5}>
             <p className="text-brown-light/60 text-xs mt-6">
-              © {new Date().getFullYear()} Crypto Wedding Fund. All rights reserved.
+              © {new Date().getFullYear()} $L2G — LOVE 2 GIFT. All rights reserved.
             </p>
           </ScrollReveal>
         </div>

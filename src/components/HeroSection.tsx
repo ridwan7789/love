@@ -109,7 +109,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <span className="bg-gradient-to-r from-brown via-gold-dark to-brown bg-clip-text text-transparent">
-              This Valentine's, Let Love Go On-Chain
+              $L2G — Where Love Becomes a Gift Forever
             </span>
           </motion.h1>
 
@@ -120,7 +120,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            February is the month of love — and this Valentine's, we're proving that crypto can be more than charts and candles. It can be hearts and commitments. Join a movement where every token carries a promise of forever.
+            This Valentine's, we're proving that crypto can be more than charts and candles. <span className="font-bold text-gold-dark">$L2G (LOVE 2 GIFT)</span> is a movement where every token is a gift of love — helping real couples reach their forever.
           </motion.p>
 
           {/* CTA Buttons with magnetic effect */}
@@ -133,13 +133,13 @@ const HeroSection = () => {
             <MagneticElement strength={0.2}>
               <ShimmerButton variant="love">
                 <Heart className="w-5 h-5" />
-                Be Someone's Valentine
+                Gift $L2G Today
               </ShimmerButton>
             </MagneticElement>
             <MagneticElement strength={0.2}>
               <ShimmerButton variant="community">
                 <MessageCircle className="w-5 h-5" />
-                Join the Love Movement
+                Join the $L2G Movement
               </ShimmerButton>
             </MagneticElement>
           </motion.div>
