@@ -41,7 +41,7 @@ const Footer = () => {
                 backgroundClip: 'text',
               }}
             >
-              From Love to Forever
+              Every Valentine's. Every Promise. Forever.
             </motion.p>
           </ScrollReveal>
 
