@@ -28,10 +28,10 @@ const Navbar = () => {
             <a href="#community" className="text-brown hover:text-gold-dark transition-colors font-medium">
               Community
             </a>
-            <button className="btn-love flex items-center gap-2 py-2 px-6 text-sm">
+            <a href="https://pump.fun" className="btn-love flex items-center gap-2 py-2 px-6 text-sm">
               <Heart className="w-4 h-4" />
               Support Love
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -76,10 +76,10 @@ const Navbar = () => {
               >
                 Community
               </a>
-              <button className="btn-love flex items-center justify-center gap-2 py-3 px-6 mt-2">
+              <a href="https://pump.fun" className="btn-love flex items-center justify-center gap-2 py-3 px-6 mt-2">
                 <Heart className="w-4 h-4" />
                 Support Love
-              </button>
+              </a>
             </div>
           </div>
         )}

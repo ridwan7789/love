@@ -115,12 +115,22 @@ const HeroSection = () => {
 
           {/* Subheadline */}
           <motion.p
-            className="text-lg md:text-xl text-brown-light max-w-2xl mb-10 leading-relaxed"
+            className="text-lg md:text-xl text-brown-light max-w-2xl mb-4 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             This Valentine's, we're proving that crypto can be more than charts and candles. <span className="font-bold text-gold-dark">$L2G (LOVE 2 GIFT)</span> is a movement where every token is a gift of love — helping real couples reach their forever.
+          </motion.p>
+
+          {/* Contract Address Info */}
+          <motion.p
+            className="text-md md:text-lg text-gold-dark font-mono font-bold mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            LOVE 2 GIFT $L2G CA: COMMING SOON
           </motion.p>
 
           {/* CTA Buttons with magnetic effect */}
@@ -131,10 +141,12 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <MagneticElement strength={0.2}>
-              <ShimmerButton variant="love">
-                <Heart className="w-5 h-5" />
-                Gift $L2G Today
-              </ShimmerButton>
+              <a href="https://pump.fun">
+                <ShimmerButton variant="love">
+                  <Heart className="w-5 h-5" />
+                  Get $L2G Now
+                </ShimmerButton>
+              </a>
             </MagneticElement>
             <MagneticElement strength={0.2}>
               <ShimmerButton variant="community">
