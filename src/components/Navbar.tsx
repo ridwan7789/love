@@ -28,7 +28,7 @@ const Navbar = () => {
             <a href="#community" className="text-brown hover:text-gold-dark transition-colors font-medium">
               Community
             </a>
-            <a href="https://pump.fun" className="btn-love flex items-center gap-2 py-2 px-6 text-sm">
+            <a href="https://pump.fun/coin/9odT3JsktWcc1qGkWunFAHeTS7DJq1ML2eCe7wjupump" className="btn-love flex items-center gap-2 py-2 px-6 text-sm">
               <Heart className="w-4 h-4" />
               Support Love
             </a>
@@ -76,7 +76,7 @@ const Navbar = () => {
               >
                 Community
               </a>
-              <a href="https://pump.fun" className="btn-love flex items-center justify-center gap-2 py-3 px-6 mt-2">
+              <a href="https://pump.fun/coin/9odT3JsktWcc1qGkWunFAHeTS7DJq1ML2eCe7wjupump" className="btn-love flex items-center justify-center gap-2 py-3 px-6 mt-2">
                 <Heart className="w-4 h-4" />
                 Support Love
               </a>

@@ -130,7 +130,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            LOVE 2 GIFT $L2G CA: COMMING SOON
+            LOVE 2 GIFT $L2G CA: 9odT3JsktWcc1qGkWunFAHeTS7DJq1ML2eCe7wjupump
           </motion.p>
 
           {/* CTA Buttons with magnetic effect */}
@@ -141,7 +141,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <MagneticElement strength={0.2}>
-              <a href="https://pump.fun">
+              <a href="https://pump.fun/coin/9odT3JsktWcc1qGkWunFAHeTS7DJq1ML2eCe7wjupump">
                 <ShimmerButton variant="love">
                   <Heart className="w-5 h-5" />
                   Get $L2G Now
